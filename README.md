@@ -1,127 +1,76 @@
-# 🤖 Excel Reading Agent - MCP vs Vanilla AI Comparison
+# 📊 Excel Reading Agent - AI Data Analysis
 
-**Demonstrating the power of Model Context Protocol (MCP) vs traditional AI approaches**
+🚀 **Live Demo**: https://andrew-infosys-excelreaderdemo-app-vgw4w6.streamlit.app/
 
-## 🎯 Overview
+## 📋 System Architecture
 
-This application showcases three different approaches to data analysis:
-1. **Local Processing** - Rule-based pattern matching (no APIs)
-2. **Vanilla AI** - Basic LLM queries (limited capabilities) 
-3. **MCP Enhanced AI** - Tool-assisted analysis (powerful & accurate)
+![Code Structure](Code%20Structure.png)
+*File structure and component relationships*
 
-## 🚀 Quick Start
+![Workflow](Workflow.png)  
+*Data processing flow and analysis modes*
 
-```bash
+## 🛠️ Installation
+
+### Windows
+```cmd
 # Clone and setup
-cd git/excelreaderdemo
+git clone https://github.com/andrew-infosys/excelreaderdemo.git
+cd excelreaderdemo
+
+# Create virtual environment
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+venv\Scripts\activate
+
+# Install dependencies
 pip install -r requirements.txt
 
-# Run the application
+# Create .env file (optional)
+echo GROQ_API_KEY=your_key_here > .env
+
+# Run app
 streamlit run app.py
 ```
 
-## 🔧 Features
+### macOS/Linux
+```bash
+# Clone and setup
+git clone https://github.com/andrew-infosys/excelreaderdemo.git
+cd excelreaderdemo
 
-### **Local Processing Mode**
-- ✅ **Fixed your original issue!** Now handles "what is expenses on jan 3rd of 2015"
-- ✅ Pattern matching with enhanced date parsing
-- ✅ Works offline, no API keys needed
-- ✅ Fast processing, private data
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate
 
-### **Vanilla AI Mode** 
-- 🤖 Basic OpenAI API integration
-- ⚠️ **Limitations demonstrated:**
-  - Cannot directly access data
-  - No real-time calculations
-  - Text-only responses
-  - Cannot verify answers
+# Install dependencies
+pip install -r requirements.txt
 
-### **MCP Enhanced AI Mode**
-- ✨ **Advanced capabilities:**
-  - Direct data manipulation tools
-  - Real-time calculations
-  - Verified results against actual data
-  - Structured tool-based responses
+# Create .env file (optional)
+echo "GROQ_API_KEY=your_key_here" > .env
 
-## 📊 The Key Difference
+# Run app
+streamlit run app.py
+```
 
-**Your question: "what is expenses on jan 3rd of 2015"**
+## 🎯 Features
 
-| Method | Response | Accuracy | Tools Used |
-|--------|----------|----------|------------|
-| **Vanilla AI** | "Based on the data, expenses would be around 810..." | ⚠️ Estimated | None |
-| **MCP Enhanced** | "Found 1 record. Expenses on Jan 3rd, 2015 is exactly $810" | ✅ Verified | filter_data |
+- **3 Analysis Modes**: Local Processing, Vanilla AI, MCP Enhanced AI
+- **Natural Language Queries**: "what is expenses on jan 3rd of 2015?"
+- **Smart Date Parsing**: Understands various date formats
+- **Real-time AI Comparison**: Side-by-side analysis
+- **FREE API Support**: Groq integration with free tier
 
-## 🛠️ MCP Tools Demonstrated
+## 🔑 Get Free API Key
 
-The MCP Enhanced AI uses these tools for accurate data analysis:
-
-- **`filter_data`** - Filter by dates, conditions, columns
-- **`calculate_aggregation`** - Sum, average, max, min, count
-- **`get_data_rows`** - Retrieve specific data rows
-
-## 🎯 Why MCP is Better
-
-### **Vanilla AI Problems:**
-- 🚫 Cannot manipulate data directly
-- 🚫 Makes educated guesses
-- 🚫 Cannot verify calculations
-- 🚫 Prone to hallucination
-
-### **MCP Enhanced Advantages:**
-- ✅ **Direct data access** through tools
-- ✅ **Real-time calculations** on actual data
-- ✅ **Verified results** against source data
-- ✅ **Tool transparency** - see what was executed
-
-## 📋 Setup for AI Features
-
-1. **Get OpenAI API Key:** https://platform.openai.com/api-keys
-2. **Enter in sidebar** or set environment variable:
-   ```bash
-   export OPENAI_API_KEY="sk-your-key-here"
-   ```
-3. **Upload data file** (Excel/CSV)
-4. **Compare methods** using the comparison feature
-
-## 🔬 Testing the Comparison
-
-1. Upload any Excel/CSV file
-2. Try the query: **"what is expenses on jan 3rd of 2015"**
-3. Switch between modes to see the differences
-4. Use the **"Run AI Comparison"** button for side-by-side analysis
-
-## 🎉 Results
-
-**Your original problem is SOLVED!** The system now:
-- ✅ Handles complex date queries
-- ✅ Shows clear differences between AI approaches  
-- ✅ Demonstrates MCP superiority
-- ✅ Works with or without AI APIs
-- ✅ Provides accurate, verified results
+Visit [console.groq.com/keys](https://console.groq.com/keys) for a free Groq API key.
 
 ## 📁 File Structure
 
 ```
-📁 git/excelreaderdemo/
-├── app.py                 # Main Streamlit app
-├── ai_clients.py          # Vanilla vs MCP AI clients
-├── api_client.py          # Local processing (enhanced)
-├── query_processor.py     # Enhanced NLP parsing
-├── ui_components.py       # Clean UI components
-├── visualizations.py      # Chart generation
-├── config.py             # Configuration
-└── requirements.txt       # Dependencies
+├── app.py              # Main Streamlit app
+├── ai_clients.py       # AI processing (Vanilla & MCP)
+├── query_processor.py  # Local pattern matching
+├── ui_components.py    # UI components
+├── env_config.py       # Environment config
+└── requirements.txt    # Dependencies
 ```
-
-## 💡 Key Insights
-
-**MCP transforms AI from "smart text generator" to "intelligent data analyst" by:**
-- Providing structured tools for data interaction
-- Enabling verification of results
-- Reducing hallucination through actual computation
-- Creating transparent, auditable AI workflows
-
-This demonstrates why MCP is the future of AI-data interactions! 🚀
